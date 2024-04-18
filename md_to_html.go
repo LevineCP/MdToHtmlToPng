@@ -82,8 +82,9 @@ func MdToHtmlToPngS(fileContent string) string {
 		log.Error("Error uploading image file to S3")
 		return ""
 	}
-	log.Info("imageUrl:%s", imageUrl)*/
+	log.Info("imageUrl:%s", imageUrl)
 
+ 	// 删除生成的文件
 	for _, v := range []string{mdName, fileName, imageName} {
 
 		err = os.Remove(v)
@@ -91,8 +92,8 @@ func MdToHtmlToPngS(fileContent string) string {
 			// 如果遇到其他类型的错误，则打印错误信息并退出
 			log.Error("Failed to delete file:", v, err)
 		}
-	}
-	return "1"
+	}*/
+	return fileName
 }
 
 func NumToStr(num interface{}) string {
