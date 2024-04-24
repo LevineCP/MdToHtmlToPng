@@ -28,7 +28,7 @@ func MdToHtmlToPngS(fileContent string) string {
 	fileName := nameTime + ".html"
 	fileArg := "-o" + fileName
 	// 创建一个*exec.Cmd对象，表示要执行的外部命令
-	cmd := exec.Command("npx", "markmap-cli", "--no-open", "--no-toolbar", fileArg, mdName) // 假设我们要执行的是Unix下的"ls -l"命令
+	cmd := exec.Command("npx", "markmap-cli", "--no-open", "--no-toolbar", "--offline", fileArg, mdName) // 假设我们要执行的是Unix下的"ls -l"命令
 
 	// 创建一个缓冲区，用于存储命令的标准输出
 	var out bytes.Buffer
